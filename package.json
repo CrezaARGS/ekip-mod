@@ -1,0 +1,17 @@
+{
+  "name": "youtube-test-bot",
+  "version": "0.0.1",
+  "description": "YouTube'ye özel bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord-buttons": "^4.0.0-deprecated",
+    "discord.js": "^12.5.2",
+    "mongoose": "^6.3.0",
+    "quick.db": "^7.1.3"
+  }
+}
