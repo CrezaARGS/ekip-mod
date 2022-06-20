@@ -4,11 +4,11 @@ require('discord-buttons')(client);
 const { MessageButton } = require('discord-buttons')
 const { MessageEmbed } = require("discord.js");
 const db = require("quick.db");
-const creza = require("./creza.json");
+const xra = require("./creza.json");
 const { readdirSync } = require('fs'); 
 const { join } = require('path');
 
-var prefix = creza.prefix
+var prefix = xra.prefix
 
 client.commands= new Discord.Collection(); 
 
@@ -51,7 +51,7 @@ client.on("message" , async msg => {
   });
 
 client.on('ready', () => {
-    client.user.setPresence({ activity: { name: "Creza 🧡 Manzelos" }, status: "dnd" });
+    client.user.setPresence({ activity: { name: "Xra 🧡 Manzelos" }, status: "dnd" });
     console.log(`${client.user.tag}, Başarıyla sunucuya giriş yaptı!`)
     client.channels.cache.get("961627476080087100").join()
 })
