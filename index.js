@@ -40,7 +40,7 @@ client.on("message" , async msg => {
    }
     if(msg.author.id === kisi){
   
-         msg.channel.send(new Discord.MessageEmbed().setColor('BLACK').setDescription(`<@${kisi}> Başarıyla Afk Modundan Çıktınız`))
+     msg.channel.send(new Discord.MessageEmbed().setColor('BLACK').setDescription(`<@${kisi}> Başarıyla Afk Modundan Çıktınız`))
      db.delete(`afkSebep_${msg.author.id}_${msg.guild.id}`)
      db.delete(`afkid_${msg.author.id}_${msg.guild.id}`)
      db.delete(`afkAd_${msg.author.id}_${msg.guild.id}`)
@@ -51,33 +51,38 @@ client.on("message" , async msg => {
   });
 
 client.on('ready', () => {
-    client.user.setPresence({ activity: { name: "Xra 🧡 Manzelos" }, status: "dnd" });
+    client.user.setPresence({ activity: { name: "Xra" }, status: "dnd" }); //idle , dnd , online
     console.log(`${client.user.tag}, Başarıyla sunucuya giriş yaptı!`)
-    client.channels.cache.get("961627476080087100").join()
 })
+
+client.on('ready', () => {
+client.channels.cache.get("SES KANAL ID").join().then(
+console.log("SES KANALINA BAĞLANDIM")
+)
+}
 
 client.on('clickButton', async button => {
     if (button.id === "sevim-var") {
-        await button.clicker.member.roles.add("961627012940836955")
+        await button.clicker.member.roles.add("SEVİM VAR ROL ID")
         await button.reply.think(true)
-        await button.reply.edit("Başarıyla <@&961627012940836955> Rolü üzerinize verildi!")
+        await button.reply.edit("Başarıyla <@&ROL İD> Rolü üzerinize verildi!")
     }
 })
 
 client.on('clickButton', async button => {
     if (button.id === "sevim-yok") {
-        await button.clicker.member.roles.add("977231399478239352")
+        await button.clicker.member.roles.add("SEVYOK ROL İD")
         await button.reply.think(true)
-        await button.reply.edit("Başarıyla <@&977231399478239352> Rolü üzerinize verildi!")
+        await button.reply.edit("Başarıyla <@&ROL İD> Rolü üzerinize verildi!")
     }
 })
 
 
 client.on('clickButton', async button => {
     if (button.id === "lgbt") {
-        await button.clicker.member.roles.add("977231484446441514")
+        await button.clicker.member.roles.add("LGBT ROL İD")
         await button.reply.think(true)
-        await button.reply.edit("Başarıyla <@&977231484446441514> Rolü üzerinize verildi!")
+        await button.reply.edit("Başarıyla <@&ROL İD> Rolü üzerinize verildi!")
     }
 })
 
@@ -90,7 +95,6 @@ client.on("message", async message => {
         const args = message.content.slice(prefix.length).trim().split(/ +/);
 
         const command = args.shift().toLowerCase();
-        const creza = new MessageEmbed() 
         if(!client.commands.has(command)) return;
 
 
@@ -106,30 +110,33 @@ client.on("message", async message => {
 
 client.on('message', message => {
     if (message.content.toLocaleLowerCase() === prefix + "tag") {
+        
+        let tag = "SUNUCU TAG" // yoksa bu satırı sil
+        let etikettag = "ETİKET TAG" // yoksa bu satırı sil
+        let isimtag = "İSİM TAG" // yoksa bu satırı sil
+        
         const embed = new MessageEmbed()
         .setDescription(`
-        Tagımız: \`§\`
+        Tagımız: \`${tag}\`
         
-        Etiket Tagımız: \`1955\`
+        Etiket Tagımız: \`${etikettag}\`
 
-        İsim Tagımız: \`Manzelos\`
+        İsim Tagımız: \`${isimtag}\`
         `).setColor("RANDOM")
         message.reply(embed)
     }
 })
 
 client.on('guildMemberAdd', member => {
-    client.channels.cache.get("976551626657628180").send(
+    client.channels.cache.get("HOŞ GELDİN KANAL ID").send(
         `
         Aramıza Hoş Geldin, ${member},
 
-        kayıt yapılması için, <#961627377883054121>, <#961627382706475039>, <#961627387693518958> Kanallarına giriniz.
-
-        Kurallarımızı, <#961627402222583888> Kanalından okuyunuz.
+        Kurallarımızı, <#KURALLAR ID> Kanalından okuyunuz.
 
         Bize destek vermek için \`.tag\` Tagımızı alabilirsiniz.
 
-        Seninle <@&961626832040497182> Rolündeki yetkililer ilgilenicektir.
+        Seninle <@&YETKİLİ ROL İD> Rolündeki yetkililer ilgilenicektir.
         `
     )
 })
