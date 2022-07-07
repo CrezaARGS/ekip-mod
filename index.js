@@ -134,4 +134,4 @@ client.on('guildMemberAdd', member => {
     )
 })
     
-client.login(creza.token)
+client.login(xra.token)
