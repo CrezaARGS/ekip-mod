@@ -4,7 +4,7 @@ require('discord-buttons')(client);
 const { MessageButton } = require('discord-buttons')
 const { MessageEmbed } = require("discord.js");
 const db = require("quick.db");
-const xra = require("./creza.json");
+const xra = require("./xra.json");
 const { readdirSync } = require('fs'); 
 const { join } = require('path');
 
