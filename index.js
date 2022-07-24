@@ -35,7 +35,7 @@ client.on("message" , async msg => {
      const kisi3 = db.fetch(`afkid_${afk.id}_${msg.guild.id}`)
      if(msg.content.includes(kisi3)){
   
-         msg.channel.send(new Discord.MessageEmbed().setColor('BLACK').setDescription(`<@` + msg.author.id + `> Etiketlediğiniz Kişi Afk \nSebep : ${sebep}`))
+         msg.channel.send(new Discord.MessageEmbed().setColor('BLACK').setDescription(`<@` + msg.author.id + `> Etiketlediğiniz Kişi Afk \nSebep : ${sebep}`).setFooter(`Creza was here 💖`))
      }
    }
     if(msg.author.id === kisi){
