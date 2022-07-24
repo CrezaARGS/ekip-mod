@@ -4,7 +4,7 @@ require('discord-buttons')(client);
 const { MessageButton } = require('discord-buttons')
 const { MessageEmbed } = require("discord.js");
 const db = require("quick.db");
-const xra = require("./xra.json");
+const creza = require("./creza.json");
 const { readdirSync } = require('fs'); 
 const { join } = require('path');
 
@@ -51,7 +51,7 @@ client.on("message" , async msg => {
   });
 
 client.on('ready', () => {
-    client.user.setPresence({ activity: { name: "Xra" }, status: "dnd" }); //idle , dnd , online
+    client.user.setPresence({ activity: { name: "Creza was here" }, status: "dnd" }); //idle , dnd , online
     console.log(`${client.user.tag}, Başarıyla sunucuya giriş yaptı!`)
 })
 
@@ -102,7 +102,7 @@ client.on("message", async message => {
             client.commands.get(command).run(client, message, args);
 
         } catch {
-            console.log("Manzelos Anti Hata !");
+            console.log("Creza Anti Hata !");
         }
     }
 })
@@ -122,7 +122,8 @@ client.on('message', message => {
         Etiket Tagımız: \`${etikettag}\`
 
         İsim Tagımız: \`${isimtag}\`
-        `).setColor("RANDOM")
+        `).setColor("RANDOM").setFooter(`Creza was here 💖`)
+
         message.reply(embed)
     }
 })
@@ -141,4 +142,4 @@ client.on('guildMemberAdd', member => {
     )
 })
     
-client.login(xra.token)
+client.login(creza.token)
